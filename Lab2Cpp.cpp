@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <math.h>
 #include <stdlib.h>
 #include <ctime>
@@ -7,6 +7,7 @@
 using namespace std;
 int main()
 {
+	int number_of_zero = 0;
 	srand(time(NULL));
 	int number_of_array_elements;
 	int i = 0;
@@ -28,8 +29,8 @@ int main()
 	cin >> filing_method;
 	if (filing_method == "keyboard")
 	{
-		cout << "Enter " << number_of_array_elements << " numbers";
-		for (int i = 0; i <= number_of_array_elements; i++)
+		cout << "Enter " << number_of_array_elements << " numbers\n";
+		for (int i = 0; i < number_of_array_elements; i++)
 		{
 			cin >> arr[i];
 		};
@@ -39,7 +40,7 @@ int main()
 		cin >> left_border;
 		cout << "Enter the right border of the range ";
 		cin >> right_border;
-		for (int i = 0; i <= number_of_array_elements; i++)
+		for (int i = 0; i < number_of_array_elements; i++)
 		{
 
 			arr[i] = (rand() % right_border + left_border);
@@ -87,12 +88,41 @@ int main()
 
 	int number_of_sign_changes = 0;
 	for (i = 0; i < number_of_array_elements; i++) {
-
+		if (arr[i] * arr[i + 2] < 0 and ((arr[i] > 0 or arr[i + 2] < 0) or (arr[i] < 0 or arr[i + 2] > 0)))
+		{
+			number_of_sign_changes++;
+		};
 
 	};
-	cout << "Number of sign changes : " << number_of_sign_changes
-		<< endl;
+	for (int i = 0; i < number_of_array_elements; i++)
+	{
+		if (arr[i] == 0)
+		{
+			number_of_zero++;
+		}
+	}
+	cout << "Number of sign changes : " << number_of_sign_changes << endl;
+	int k = 0;
+	for (int i = 0; i < number_of_array_elements; i++)
+	{
 
+		if (arr[i] == 0)
+		{
+			break;
+		}
+		if (arr[i] % 2) {
+			int k_num = 0;
+			arr[k] = k_num;
+			arr[k] = arr[i];
+			arr[i] = k_num;
+			k++;
+		}
+		else {
+			continue;
+		}
+
+	}
+	cout << "Even first:\n";
 	for (int i = 0; i < number_of_array_elements; i++)
 	{
 		cout << arr[i] << endl;
@@ -100,4 +130,3 @@ int main()
 
 
 }
-
