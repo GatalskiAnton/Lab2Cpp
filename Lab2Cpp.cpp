@@ -23,7 +23,7 @@ int main()
 	} while ((number_of_array_elements > MAX_NUMBER_OF_ARRAY_ELEMENTS) or (number_of_array_elements < 0));
 	int* arr = new int[number_of_array_elements];
 	int left_border,right_border;
-	cout << "How do you want to filing the array, by keyboard input or random number generator(type keyboard, generator accordingly\n";
+	cout << "How do you want to filing the array, by keyboard input or random number generator(type keyboard, random accordingly\n";
 	string filing_method;
 	cin >> filing_method;
 	if (filing_method == "keyboard")
@@ -91,7 +91,7 @@ int main()
 	
 	int number_of_sign_changes = 0;
 	
-	for (int i = 0; i < number_of_array_elements; i++)
+	for (int i = 0; i < (number_of_array_elements - 1); i++)
 	{
 
 		if (arr[i] * arr[i + 1] == 0 && (arr[i] == 0 || arr[i + 1] == 0) && (arr[i] < 0 || arr[i + 1] < 0))
@@ -110,7 +110,7 @@ int main()
 	for (int i = number_of_array_elements; i > 0; --i)
 	{
 		
-		for (int j = (number_of_array_elements - 1); j > 0; --j)
+		for (int j = (number_of_array_elements); j > 0; --j)
 		{
 			if (arr[j] % 2 && arr[j - 1])
 			{
