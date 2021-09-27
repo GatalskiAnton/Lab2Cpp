@@ -109,8 +109,8 @@ int main()
 	<< endl;
 	for (int i = number_of_array_elements; i > 0; --i)
 	{
-		
-		for (int j = (number_of_array_elements); j > 0; --j)
+		int j = i - 1;
+		for ( j = number_of_array_elements; j > 0; --j)
 		{
 			if (arr[j] % 2 && arr[j - 1])
 			{
