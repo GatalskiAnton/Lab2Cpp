@@ -117,7 +117,7 @@ int main()
 
 			}
 			else {
-				swap(arr[j], arr[i - 1]);
+				swap(arr[j], arr[j - 1]);
 			}
 		}
 	}
